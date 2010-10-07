@@ -1,6 +1,6 @@
 %define oname rdflib
 #gw please don't upgrade to 3.0 as it is not API compatible
-%define version 2.4.0
+%define version 2.4.2
 %define rel 1
 
 Summary: Python library for working with RDF
