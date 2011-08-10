@@ -1,18 +1,18 @@
 %define oname rdflib
-#gw please don't upgrade to 3.0 as it is not API compatible
-%define version 2.4.2
-%define rel 3
+%define version 3.1.0
+%define release %mkrel 1
 
-Summary: Python library for working with RDF
-Name: python-%{oname}
-Version: %{version}
-Release: %mkrel %rel
-Source0: %{oname}-%{version}.tar.gz
-License: BSD
-Group: Development/Python
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: python-setuptools
-Url: http://rdflib.net/
+Summary:	Python library for working with RDF
+Name:		python-%{oname}
+Version:	%{version}
+Release:	%{release}
+Source0:	%{oname}-%{version}.tar.gz
+License:	BSD
+Group:		Development/Python
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildArch:	noarch
+BuildRequires:	python-setuptools
+Url:		http://rdflib.net/
 
 %description
 RDFLib is a Python library for working with RDF, a simple yet powerful
@@ -30,18 +30,15 @@ version instead: http://rdflib.googlecode.com/svn/trunk#egg=rdflib-dev
 %setup -q -n %{oname}-%{version}
 
 %build
-python setup.py build
+%__python setup.py build
 
 %install
-python setup.py install --root=$RPM_BUILD_ROOT
-rm -rf %buildroot%py_platsitedir/test
+PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot} --record=FILE_LIST
+%__rm -rf %{buildroot}%{py_platsitedir}/test
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+%__rm -rf %{buildroot}
 
-%files
+%files -f FILE_LIST
 %defattr(-,root,root)
-%_bindir/rdfpipe
-%py_platsitedir/%oname
-%py_platsitedir/rdflib_tools
-%py_platsitedir/*.egg-info
+%doc CHANGELOG LICENSE README examples/
