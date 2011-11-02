@@ -1,6 +1,6 @@
 %define oname rdflib
 %define version 3.1.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary:	Python library for working with RDF
 Name:		python-%{oname}
