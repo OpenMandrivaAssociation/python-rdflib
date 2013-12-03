@@ -34,6 +34,6 @@ PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot} --record
 %__rm -rf %{buildroot}%{py_platsitedir}/test
 
 %files -f FILE_LIST
-%doc CHANGELOG LICENSE README examples/
+%doc  LICENSE  examples/
 
 
