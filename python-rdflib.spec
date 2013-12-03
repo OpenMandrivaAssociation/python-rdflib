@@ -2,12 +2,12 @@
 
 Summary:	Python library for working with RDF
 Name:		python-%{oname}
-Version:	3.1.0
-Release:	2
+Version:	4.0.1
+Release:	1
 License:	BSD
 Group:		Development/Python
 Url:		http://rdflib.net/
-Source0:	%{oname}-%{version}.tar.gz
+Source0:	http://pypi.python.org/packages/source/r/rdflib/rdflib-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	python-setuptools
 
@@ -35,4 +35,5 @@ PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot} --record
 
 %files -f FILE_LIST
 %doc CHANGELOG LICENSE README examples/
+
 
