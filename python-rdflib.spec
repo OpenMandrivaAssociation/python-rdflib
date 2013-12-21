@@ -2,14 +2,14 @@
 
 Summary:	Python library for working with RDF
 Name:		python-%{oname}
-Version:	3.1.0
-Release:	6
+Version:	4.0.1
+Release:	1
+Source0:	http://pypi.python.org/packages/source/r/rdflib/rdflib-%{version}.tar.gz
 License:	BSD
 Group:		Development/Python
-Url:		http://rdflib.net/
-Source0:	%{oname}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	python-setuptools
+Url:		http://rdflib.net/
 
 %description
 RDFLib is a Python library for working with RDF, a simple yet powerful
@@ -24,7 +24,7 @@ or have a craving for the very latest, you may want the development
 version instead: http://rdflib.googlecode.com/svn/trunk#egg=rdflib-dev
 
 %prep
-%setup -qn %{oname}-%{version}
+%setup -q -n %{oname}-%{version}
 
 %build
 %__python setup.py build
@@ -32,7 +32,10 @@ version instead: http://rdflib.googlecode.com/svn/trunk#egg=rdflib-dev
 %install
 PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot} --record=FILE_LIST
 %__rm -rf %{buildroot}%{py_platsitedir}/test
+sed -i 's/.*egg-info$//' FILE_LIST
+
+%clean
 
 %files -f FILE_LIST
-%doc CHANGELOG LICENSE README examples/
+%doc  LICENSE  examples/
 
