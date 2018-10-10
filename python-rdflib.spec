@@ -2,8 +2,8 @@
 
 Summary:	Python library for working with RDF
 Name:		python-%{oname}
-Version:	4.1.2
-Release:	5
+Version:	4.2.2
+Release:	1
 Source0:	http://pypi.python.org/packages/source/r/rdflib/rdflib-%{version}.tar.gz
 License:	BSD
 Group:		Development/Python
