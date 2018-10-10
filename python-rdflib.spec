@@ -38,6 +38,6 @@ sed -i 's/.*egg-info$//' FILE_LIST
 
 %files -f FILE_LIST
 %doc  LICENSE  examples/
-%{_bindir}/python3-*
+#%{_bindir}/python*
 %{python3_sitelib}/*
 
