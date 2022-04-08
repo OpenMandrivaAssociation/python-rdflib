@@ -38,6 +38,11 @@ sed -i 's/.*egg-info$//' FILE_LIST
 
 %files
 %doc  LICENSE  examples/
-#%{_bindir}/python*
-#{python_sitelib}/*
+%{_bindir}/csv2rdf
+%{_bindir}/rdf2dot
+%{_bindir}/rdfgraphisomorphism
+%{_bindir}/rdfpipe
+%{_bindir}/rdfs2dot
+%{python_sitelib}/rdflib-%{version}-py*.*.egg-info
+%{python_sitelib}/rdflib/
 
