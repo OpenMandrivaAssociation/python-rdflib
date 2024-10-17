@@ -9,7 +9,7 @@ License:	BSD
 Group:		Development/Python
 BuildArch:	noarch
 BuildRequires:	python-setuptools
-Url:		http://rdflib.net/
+Url:		https://rdflib.net/
 
 %description
 RDFLib is a Python library for working with RDF, a simple yet powerful
