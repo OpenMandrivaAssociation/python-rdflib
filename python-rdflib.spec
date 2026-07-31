@@ -2,8 +2,8 @@
 
 Summary:	Python library for working with RDF
 Name:		python-%{oname}
-Version:	6.1.1
-Release:	4
+Version:	7.6.0
+Release:	1
 Source0:	https://files.pythonhosted.org/packages/42/ff/00084798ba8d21f9e79044c4b8e56d0fca4bb7dd428ae693bcbfdbaa4a06/rdflib-%{version}.tar.gz
 License:	BSD
 Group:		Development/Python
@@ -24,7 +24,7 @@ or have a craving for the very latest, you may want the development
 version instead: http://rdflib.googlecode.com/svn/trunk#egg=rdflib-dev
 
 %prep
-%setup -q -n %{oname}-%{version}
+%setup -q -n rdflib-7.6.0
 
 %build
 %__python setup.py build
